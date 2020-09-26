@@ -1,0 +1,12 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+  main:
+    allow-bean-definition-overriding: true
+
+
+feign:
+  hystrix:
+    enabled: false
