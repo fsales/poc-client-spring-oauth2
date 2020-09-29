@@ -35,9 +35,9 @@ security:
       id: dados-receita
     client:
       clientId: clientId
-        clientSecret: clientSecret
-        accessTokenUri: accessTokenUri
-        tokenName: access_token
-        grant-type: client_credentials
-        scope: scope
-        id: client
+      clientSecret: clientSecret
+      accessTokenUri: accessTokenUri
+      tokenName: access_token
+      grant-type: client_credentials
+      scope: scope
+      id: client
