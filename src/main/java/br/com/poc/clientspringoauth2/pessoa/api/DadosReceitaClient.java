@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "cpfs", url = "${poc-oauth2.dados-receita.endpoint}")
+import java.util.List;
+
+@FeignClient(name = "cpfs", url = "${poc-oauth2.dados-receita.endpoint}", configuration = FeignClientConfiguration.class)
 public interface DadosReceitaClient {
 
-     @RequestMapping(method = RequestMethod.POST,
-             value = "${poc-oauth2.dados-receita.method-consulta}",
-             consumes = MediaType.APPLICATION_JSON_VALUE)
-     String consultaPorCPF(@PathVariable("listaCpf")
-                                   String cpf);
+    @RequestMapping(method = RequestMethod.POST,
+            value = "${poc-oauth2.dados-receita.method-consulta}",
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    String consultaPorCPF(@PathVariable("listaCpf")
+                                  List<String> cpf);
 }

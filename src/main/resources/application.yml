@@ -17,5 +17,27 @@ feign:
 
 poc-oauth2:
   dados-receita:
-    endpoint:
-    method-consulta:
+    endpoint: https://h-apigateway.conectagov.estaleiro.serpro.gov.br/api-cpf-light/v2
+    method-consulta: /consulta/cpf
+    oauth2:
+      cpf-contrato: "01182101062"
+
+
+security:
+  oauth2:
+    dados-receita:
+      clientId: clientId
+      clientSecret: clientSecret
+      accessTokenUri: accessTokenUri
+      tokenName: access_token
+      grant-type: client_credentials
+      scope: scope
+      id: dados-receita
+    client:
+      clientId: clientId
+        clientSecret: clientSecret
+        accessTokenUri: accessTokenUri
+        tokenName: access_token
+        grant-type: client_credentials
+        scope: scope
+        id: client
